@@ -57,7 +57,7 @@ const ContactForm = () => {
         />
       </label>
       <button
-        className="flex w-full items-center justify-center gap-3 rounded-lg bg-primary px-12 py-4 font-mono text-xs font-bold uppercase tracking-widest text-on-primary transition duration-300 hover:scale-[1.02] active:scale-[0.98] md:w-fit"
+        className="flex w-full items-center justify-center gap-3 rounded-lg bg-primary px-6 py-4 font-mono text-xs font-bold uppercase tracking-widest text-on-primary transition duration-300 hover:scale-[1.02] active:scale-[0.98] md:w-fit md:px-12"
         disabled={status === "sending"}
         type="submit"
       >

@@ -12,6 +12,10 @@ const TiltCard = ({ children, className }: TiltCardProps) => {
   const cardRef = useRef<HTMLElement | null>(null);
 
   const handleMouseMove = (event: MouseEvent<HTMLElement>) => {
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      return;
+    }
+
     const card = cardRef.current;
 
     if (!card) {

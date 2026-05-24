@@ -15,14 +15,14 @@ const ContactSection = () => {
   const socialLinks = contactLinks.filter((link) => ["LinkedIn", "Github", "Telegram", "LeetCode"].includes(link.label));
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-background py-32">
+    <section id="contact" className="relative overflow-hidden bg-background py-20 sm:py-28 lg:py-32">
       <div className="glow-effect -left-28 -top-24" />
       <div className="glow-effect -bottom-28 -right-28" />
       <Container className="relative z-10 grid gap-12 lg:grid-cols-12">
         <header className="flex flex-col gap-6 lg:col-span-5">
           <div className="flex flex-col gap-4">
             <span className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">Available for projects</span>
-            <h2 className="text-5xl font-bold leading-tight text-on-surface sm:text-6xl lg:text-7xl">
+            <h2 className="text-4xl font-bold leading-tight text-on-surface sm:text-6xl lg:text-7xl">
               Get in <br />
               <span className="italic text-primary">Touch</span>
             </h2>
@@ -34,7 +34,7 @@ const ContactSection = () => {
           <div className="mt-10 flex flex-col gap-8">
             <div className="flex flex-col gap-2">
               <span className="font-mono text-xs uppercase tracking-widest text-outline">Direct Contact</span>
-              <a className="text-3xl font-semibold text-on-surface transition hover:text-primary" href={email?.href}>
+              <a className="break-all text-2xl font-semibold text-on-surface transition hover:text-primary sm:text-3xl" href={email?.href}>
                 dagmawimuluwork@gmail.com
               </a>
             </div>
@@ -65,7 +65,7 @@ const ContactSection = () => {
         </header>
 
         <div className="lg:col-span-7">
-          <div className="glass-card relative overflow-hidden rounded-xl p-8 md:p-12">
+          <div className="glass-card relative overflow-hidden rounded-xl p-5 sm:p-8 md:p-12">
             <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary/60 to-transparent" />
             <ContactForm />
           </div>

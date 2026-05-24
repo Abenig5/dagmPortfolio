@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import TiltCard from "@/components/TiltCard";
-import { contactLinks, projects } from "@/data/portfolio";
+import { projects } from "@/data/portfolio";
 import Image from "next/image";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -35,7 +35,7 @@ const ProjectsSection = () => {
             Interested in the process?
           </p>
           <a
-            href={contactLinks[0].href}
+            href="#contact"
             className="inline-flex rounded-full bg-primary px-10 py-4 font-mono text-sm font-bold uppercase tracking-widest text-on-primary transition hover:scale-105 active:scale-95"
           >
             Let&apos;s Collaborate
@@ -119,14 +119,8 @@ const ProjectVisual = ({ project }: ProjectVisualProps) => {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
       <div className="absolute inset-4 rounded-xl border border-white/10 sm:inset-8" />
-      <div className="absolute left-6 top-6 font-mono text-[10px] uppercase tracking-widest text-white/60 sm:left-10 sm:top-10 sm:text-xs">{project.category}</div>
-      <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-white/10 bg-black/30 p-3 backdrop-blur sm:bottom-10 sm:left-10 sm:right-10 sm:p-4">
-        <div className="mb-3 h-2 w-24 rounded-full bg-primary/70" />
-        <div className="grid grid-cols-3 gap-3">
-          <div className="h-12 rounded-lg bg-white/10" />
-          <div className="h-12 rounded-lg bg-white/15" />
-          <div className="h-12 rounded-lg bg-white/10" />
-        </div>
+      <div className="absolute left-6 top-6 rounded-full border border-white/10 bg-black/30 px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-white/80 backdrop-blur sm:left-10 sm:top-10 sm:text-xs">
+        {project.category}
       </div>
     </div>
   );

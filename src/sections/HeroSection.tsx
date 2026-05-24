@@ -29,7 +29,7 @@ const HeroSection = () => {
             View Projects
           </a>
           <a
-            href={contactLinks[0].href}
+            href="#contact"
             className="rounded-lg border border-outline-variant/50 px-6 py-4 text-center font-mono text-sm font-semibold uppercase text-on-surface transition hover:bg-surface-container sm:px-8"
           >
             Get In Touch

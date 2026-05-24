@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-on-surface antialiased;
+  min-height: 100dvh;
+}
+
+::selection {
+  @apply bg-primary text-on-primary;
+}
+
+.glass-card {
+  background: rgba(17, 17, 17, 0.72);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tilt-card {
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 12s ease infinite;
+}
+
+.page-grid {
+  background-image:
+    linear-gradient(rgba(210, 187, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(210, 187, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.gradient-mesh {
+  background:
+    radial-gradient(circle at 50% -20%, rgba(37, 0, 90, 0.9) 0%, transparent 48%),
+    radial-gradient(circle at 0% 100%, rgba(19, 19, 19, 0.9) 0%, transparent 42%),
+    #050505;
+}
+
+.timeline-line {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(149, 141, 161, 0.22) 10%,
+    rgba(149, 141, 161, 0.22) 90%,
+    transparent
+  );
+}
+
+.glow-effect {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.project-visual {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(210, 187, 255, 0.22), transparent 28%),
+    linear-gradient(135deg, rgba(32, 31, 31, 0.95), rgba(10, 10, 10, 0.98));
+}
+
+.project-visual-travel {
+  background:
+    radial-gradient(circle at 75% 22%, rgba(137, 206, 255, 0.26), transparent 24%),
+    linear-gradient(135deg, #111827, #1c1b1b 50%, #2a2040);
+}
+
+.project-visual-hospitality {
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 183, 132, 0.24), transparent 28%),
+    linear-gradient(135deg, #201f1f, #131313 52%, #302114);
+}
+
+.project-visual-payments {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.28), transparent 24%),
+    linear-gradient(135deg, #0e0e0e, #182230 52%, #111827);
+}
+
+.project-visual-autonomous {
+  background:
+    radial-gradient(circle at 25% 75%, rgba(137, 206, 255, 0.22), transparent 26%),
+    linear-gradient(135deg, #0e0e0e, #1c1b1b 44%, #10201d);
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

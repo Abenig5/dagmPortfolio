@@ -1,5 +1,6 @@
 import ContactForm from "@/components/ContactForm";
 import Container from "@/components/Container";
+import MotionBlock from "@/components/MotionBlock";
 import { contactLinks } from "@/data/portfolio";
 import { FiGithub, FiGlobe, FiLinkedin, FiMapPin, FiMessageCircle } from "react-icons/fi";
 
@@ -19,7 +20,7 @@ const ContactSection = () => {
       <div className="glow-effect -left-28 -top-24" />
       <div className="glow-effect -bottom-28 -right-28" />
       <Container className="relative z-10 grid gap-12 lg:grid-cols-12">
-        <header className="flex flex-col gap-6 lg:col-span-5">
+        <MotionBlock className="flex flex-col gap-6 lg:col-span-5" direction="right">
           <div className="flex flex-col gap-4">
             <span className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">Available for projects</span>
             <h2 className="text-4xl font-bold leading-tight text-on-surface sm:text-6xl lg:text-7xl">
@@ -62,9 +63,9 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-        </header>
+        </MotionBlock>
 
-        <div className="lg:col-span-7">
+        <MotionBlock className="lg:col-span-7" direction="left" delay={0.08}>
           <div className="glass-card relative overflow-hidden rounded-xl p-5 sm:p-8 md:p-12">
             <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary/60 to-transparent" />
             <ContactForm />
@@ -82,7 +83,7 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-        </div>
+        </MotionBlock>
       </Container>
     </section>
   );

@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import MotionBlock from "@/components/MotionBlock";
 import SectionHeading from "@/components/SectionHeading";
 import { skillGroups } from "@/data/portfolio";
 import { FiCloud, FiCode, FiLayers } from "react-icons/fi";
@@ -13,16 +14,18 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="bg-surface-container-lowest py-32">
       <Container>
-        <div className="mx-auto mb-20 text-center [&>div]:mx-auto">
+        <MotionBlock className="mx-auto mb-20 text-center [&>div]:mx-auto">
           <SectionHeading
             eyebrow="Competencies"
             title="Precision across the stack."
             description="Skills taken from Dagmawi's resume and grouped around the way he builds production software."
           />
-        </div>
+        </MotionBlock>
         <div className="grid gap-6 md:grid-cols-3">
-          {skillGroups.map((group) => (
-            <SkillCard key={group.title} group={group} />
+          {skillGroups.map((group, index) => (
+            <MotionBlock key={group.title} delay={index * 0.08}>
+              <SkillCard group={group} />
+            </MotionBlock>
           ))}
         </div>
       </Container>

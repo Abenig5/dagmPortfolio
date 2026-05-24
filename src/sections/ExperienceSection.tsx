@@ -1,51 +1,56 @@
 import Container from "@/components/Container";
+import MotionBlock from "@/components/MotionBlock";
 import { education, experiences } from "@/data/portfolio";
 
 const ExperienceSection = () => {
   return (
     <section id="experience" className="gradient-mesh py-20 sm:py-28 lg:py-32">
       <Container>
-        <div className="mb-12 sm:mb-16">
+        <MotionBlock className="mb-12 sm:mb-16">
           <span className="mb-4 block font-mono text-xs font-semibold uppercase tracking-widest text-primary">
             Proven Track Record
           </span>
           <h2 className="max-w-4xl text-4xl font-bold leading-tight text-on-surface sm:text-6xl lg:text-7xl">
             Professional Journey
           </h2>
-        </div>
+        </MotionBlock>
 
         <div className="relative pl-7 md:pl-0">
           <div className="timeline-line absolute bottom-0 left-0 top-0 w-px md:left-1/2 md:-translate-x-1/2" />
           <div className="space-y-14 md:space-y-24">
             {experiences.map((item, index) => (
-              <TimelineItem key={`${item.role}-${item.company}`} item={item} index={index} />
+              <MotionBlock key={`${item.role}-${item.company}`} direction={index % 2 === 0 ? "right" : "left"}>
+                <TimelineItem item={item} index={index} />
+              </MotionBlock>
             ))}
           </div>
         </div>
 
         <div className="mt-20 sm:mt-28">
-          <div className="mb-12 max-w-2xl">
+          <MotionBlock className="mb-12 max-w-2xl">
             <span className="mb-4 block font-mono text-xs font-semibold uppercase tracking-widest text-primary">
               Education
             </span>
             <h3 className="text-3xl font-semibold leading-tight text-on-surface sm:text-5xl">Academic foundation</h3>
-          </div>
+          </MotionBlock>
           <div className="grid gap-6 md:grid-cols-2">
-            {education.map((item) => (
-              <article key={item.title} className="glass-card rounded-xl p-5 transition duration-500 hover:-translate-y-2 sm:p-8">
-                <p className="mb-3 font-mono text-xs uppercase tracking-widest text-outline">{item.period}</p>
-                <h4 className="text-xl font-semibold text-on-surface sm:text-2xl">{item.title}</h4>
-                <p className="mt-2 font-mono text-xs uppercase tracking-wider text-secondary">{item.institution}</p>
-                <p className="mt-2 text-sm text-outline">{item.location}</p>
-                <ul className="mt-6 space-y-3 text-sm leading-6 text-on-surface-variant">
-                  {item.details.map((detail) => (
-                    <li key={detail} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
+            {education.map((item, index) => (
+              <MotionBlock key={item.title} delay={index * 0.08}>
+                <article className="glass-card rounded-xl p-5 transition duration-500 hover:-translate-y-2 sm:p-8">
+                  <p className="mb-3 font-mono text-xs uppercase tracking-widest text-outline">{item.period}</p>
+                  <h4 className="text-xl font-semibold text-on-surface sm:text-2xl">{item.title}</h4>
+                  <p className="mt-2 font-mono text-xs uppercase tracking-wider text-secondary">{item.institution}</p>
+                  <p className="mt-2 text-sm text-outline">{item.location}</p>
+                  <ul className="mt-6 space-y-3 text-sm leading-6 text-on-surface-variant">
+                    {item.details.map((detail) => (
+                      <li key={detail} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              </MotionBlock>
             ))}
           </div>
         </div>

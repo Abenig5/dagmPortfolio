@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import MotionBlock from "@/components/MotionBlock";
 import TiltCard from "@/components/TiltCard";
 import { projects } from "@/data/portfolio";
 import Image from "next/image";
@@ -11,7 +12,7 @@ const ProjectsSection = () => {
       <div className="pointer-events-none absolute bottom-40 right-0 h-72 w-72 rounded-full bg-secondary/10 blur-[90px]" />
 
       <Container className="relative z-10">
-        <div className="mb-12 sm:mb-16 lg:mb-20">
+        <MotionBlock className="mb-12 sm:mb-16 lg:mb-20">
           <div className="mb-4 inline-flex items-center gap-3">
             <span className="h-px w-8 bg-primary" />
             <span className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">Portfolio</span>
@@ -22,15 +23,17 @@ const ProjectsSection = () => {
           <p className="max-w-2xl text-lg leading-8 text-on-surface-variant">
             Resume-backed projects across travel booking, hospitality, payments, and autonomous vehicle experimentation.
           </p>
-        </div>
+        </MotionBlock>
 
         <div className="flex flex-col gap-8 sm:gap-12">
           {projects.map((project, index) => (
-            <FeaturedProject key={project.title} project={project} index={index} />
+            <MotionBlock key={project.title} direction={index % 2 === 0 ? "right" : "left"} delay={0.05}>
+              <FeaturedProject project={project} index={index} />
+            </MotionBlock>
           ))}
         </div>
 
-        <div className="mt-24 text-center">
+        <MotionBlock className="mt-24 text-center">
           <p className="mb-6 font-mono text-xs uppercase tracking-widest text-on-surface-variant">
             Interested in the process?
           </p>
@@ -40,7 +43,7 @@ const ProjectsSection = () => {
           >
             Let&apos;s Collaborate
           </a>
-        </div>
+        </MotionBlock>
       </Container>
     </section>
   );

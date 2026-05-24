@@ -1,6 +1,5 @@
 import Container from "@/components/Container";
 import MobileNav from "@/components/MobileNav";
-import ThemeToggle from "@/components/ThemeToggle";
 import { NAV_LINKS, SITE_NAME } from "@/constants/site";
 
 const Header = () => {
@@ -17,10 +16,7 @@ const Header = () => {
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-3">
-          <ThemeToggle />
-          <MobileNav />
-        </div>
+        <MobileNav />
       </Container>
     </header>
   );
